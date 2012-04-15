@@ -1,0 +1,38 @@
+This is a base application which uses spring multi action controller. I think it is hard to get a working multi action controller project online.This is developed by getting details from many websites.
+
+This application does nothing but will keep 2 types of users admin and guest. Admin can list/add/edit/delete users and guest can do nothing.
+
+Programs needed to download / set up
+
+    JDK 1.5 or higher(1.7 is preferred)
+    MySQL Community server (Database), MySql workbench latest versions
+    JBoss 4.2.2 GA (higher versions can be used, if the configurations are updated correctly)
+    Intellij IDEA 11.1 Community Edition (Eclipse can also be used, I don't prefer Netbeans)
+    Git (with out this also it will work fine, as Intellij & Eclipse support checkout from the IDE itself) 
+
+Steps for testing the Application
+
+    Install all the above
+    Download the war file from the dist directory
+    create a user localuser in mysql (with password as localuser)
+    restore the db file from the code
+    assign desired permission to the localuser for the new schema
+    Put the war file in jboss/server/default/deploy directory
+    Start the JBoss server from jboss/run.bat
+    In http://localhost:8080/mysimplespringapp/ our application will be up and running.
+    Either create a database user name as username and password as password, or edit the same in MySimpleSpingApp/WebContent/WEB-INF/applicationCotext.xml
+    In Mysql work bench insert a restore script which is available in MySimpleSpringApp/WebContent/WEB-INF/databaseDesign/databaseScripts.sql 
+
+Now everything will work as expected.
+Future chages
+
+The changes we plan are:
+
+    Hibernate
+    Add Unit test - junit 3
+    Create mock classes to support unit test
+    Ability to read data from a property file
+    Mock the db , and should be able to be live on mock mode
+    Need to have 2 separate major versions of app which runs junit 3 and junit 4.
+    Internationalization of pages (web pages)
+    Build any big project out of this code base 
